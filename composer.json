@@ -1,5 +1,5 @@
 {
-  "name": "MageBootcamp/CustomerFitness",
+  "name": "magebootcamp/customerfitness",
   "description": "A Magento 2 modules that add a customer fitness log to your store",
   "minimum-stability": "stable",
   "license": "GPL-3.0-or-later",
