@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-      "MageBootcamp/SizeChart": "1.0.0"
+      "magebootcamp/sizechart": "1.0.0"
   },
   "autoload": {
     "files": [
