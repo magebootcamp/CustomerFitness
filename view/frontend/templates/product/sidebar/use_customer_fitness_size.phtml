@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright (c) MageBootcamp 2020.
+ *
+ * Created by MageBootcamp: The Ultimate Online Magento Course.
+ * We are here to help you become a Magento PRO.
+ * Watch and learn at https://magebootcamp.com.
+ *
+ * @author Daniel Donselaar
+ */
+
+/** @var MageBootcamp\CustomerFitness\Block\Sidebar\CustomerSize $block */
+
+/**
+ * This template is responsible for adding the customers sizes
+ * to the size filter in the MageBootcamp_SizeChart module
+ */
+?>
+<div data-role="customer-size-sidebar" data-bind="scope: 'customerSize'">
+    <form action="#"
+          class="customer-size-form"
+          id="customer-size-form"
+          data-bind="submit: filter, visible: showButton"
+          style="display: none">
+        <div class="actions-toolbar">
+            <div class="primary actions-secondary">
+                <button type="submit" class="action submit secondary"><span><?=
+                        $block->escapeHtml(__('Use my size'))
+                        ?></span>
+                </button>
+            </div>
+            <span class="error" data-bind="text: error"></span>
+        </div>
+        <div class="customer-size-description">
+            <a href="<?= $block->getAccountSizeUrl() ?>"><?= __('Configure your sizes in your account') ?></a>
+        </div>
+    </form>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "[data-role=customer-size-sidebar]": {
+        "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    }
+}
+</script>

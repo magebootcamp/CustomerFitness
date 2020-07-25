@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) MageBootcamp 2020.
+  ~
+  ~ Created by MageBootcamp: The Ultimate Online Magento Course.
+  ~ We are here to help you become a Magento PRO.
+  ~ Watch and learn at https://magebootcamp.com.
+  ~
+  ~ @author Daniel Donselaar
+  -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <update handle="fitness_customer_info_links"/>
+    <head>
+        <css src="MageBootcamp_CustomerFitness::css/Chart.min.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="MageBootcamp\CustomerFitness\Block\Customer\FitnessLogChart" name="list_fitness_log_chart" template="MageBootcamp_CustomerFitness::customer/chart.phtml" cacheable="false">
+                <arguments>
+                    <argument name="field_color_mapping" xsi:type="array">
+                        <item name="height" xsi:type="string">#8bc53f</item>
+                        <item name="weight" xsi:type="string">#f3793b</item>
+                        <item name="body_fat" xsi:type="string">#ffdd15</item>
+                        <item name="BMI" xsi:type="string">#26a9e0</item>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="MageBootcamp\CustomerFitness\Block\Customer\ListFitnessLog" name="list_fitness_log" template="MageBootcamp_CustomerFitness::customer/list.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

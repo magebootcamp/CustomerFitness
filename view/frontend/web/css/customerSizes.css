@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) MageBootcamp 2020.
+ *
+ * Created by MageBootcamp: The Ultimate Online Magento Course.
+ * We are here to help you become a Magento PRO.
+ * Watch and learn at https://magebootcamp.com.
+ *
+ * @author Daniel Donselaar
+ */
+.page-main .block.block-my-size {
+    margin-bottom: 10px;
+}
+
+#customer-size-form .customer-size-description {
+    margin-top: 10px;
+}
+
+#customer-size-form .error {
+    color: #ff5501;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+}

@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright (c) MageBootcamp 2020.
+ *
+ * Created by MageBootcamp: The Ultimate Online Magento Course.
+ * We are here to help you become a Magento PRO.
+ * Watch and learn at https://magebootcamp.com.
+ *
+ * @author Daniel Donselaar
+ */
+
+/** @var \MageBootcamp\CustomerFitness\Block\Customer\EditFitnessLog $block */
+?>
+<form action="<?= $block->escapeUrl($block->getSaveUrl()) ?>"
+      method="post"
+      id="form-validate"
+      enctype="multipart/form-data"
+      data-mage-init='{"validation": {}}'
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Fitness Progress')) ?></span></legend>
+        <br>
+        <?php foreach ($block->getFormFields() as $key => $label): ?>
+            <div class="field  required">
+                <label class="label" for="<?= $block->escapeHtmlAttr($key) ?>"><span><?= $label ?></span></label>
+                <div class="control">
+                    <input type="number"
+                           name="<?= $block->escapeHtmlAttr($key) ?>"
+                           value="<?= $block->escapeHtmlAttr($block->getLogData($key)) ?>"
+                           title="<?= $block->escapeHtmlAttr($label) ?>"
+                           class="input-text required-entry validate-no-empty validate-number validate-greater-than-zero"
+                           id="<?= $block->escapeHtmlAttr($key) ?>">
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit"
+                    class="action save primary"
+                    data-action="save-log"
+                    title="<?= $block->escapeHtmlAttr(__('Save Log')) ?>">
+                <span><?= $block->escapeHtml(__('Save Log')) ?></span>
+            </button>
+        </div>
+        <div class="secondary">
+            <a class="action back" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
+                <span><?= $block->escapeHtml(__('Go back')) ?></span>
+            </a>
+        </div>
+    </div>
+</form>

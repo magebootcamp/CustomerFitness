@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) MageBootcamp 2020.
+  ~
+  ~ Created by MageBootcamp: The Ultimate Online Magento Course.
+  ~ We are here to help you become a Magento PRO.
+  ~ Watch and learn at https://magebootcamp.com.
+  ~
+  ~ @author Daniel Donselaar
+  -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Html\Links" as="links" name="customer.fitness.info.links" before="-">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">items customer-fitness-links</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="sales.order.info.links.information">
+                    <arguments>
+                        <argument name="path" xsi:type="string">fitness/customer/edit</argument>
+                        <argument name="label" xsi:type="string" translate="true">New Log</argument>
+                        <argument name="class" xsi:type="string" translate="true">new-fitness-log</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

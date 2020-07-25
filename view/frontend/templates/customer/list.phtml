@@ -1,0 +1,68 @@
+<?php
+/**
+ * Copyright (c) MageBootcamp 2020.
+ *
+ * Created by MageBootcamp: The Ultimate Online Magento Course.
+ * We are here to help you become a Magento PRO.
+ * Watch and learn at https://magebootcamp.com.
+ *
+ * @author Daniel Donselaar
+ */
+
+/** @var \MageBootcamp\CustomerFitness\Block\Customer\ListFitnessLog $block */
+
+$logs = $block->getLogs();
+?>
+<?php if ($logs->getTotalCount() > 0) : ?>
+    <div class="table-wrapper logs">
+        <table class="data table table-logs" id="my-fitness-log-table">
+            <caption class="table-caption"><?= $block->escapeHtml(__('Product Logs')) ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col date"><?= $block->escapeHtml(__('Logged At')) ?></th>
+                    <th scope="col" class="col item"><?= $block->escapeHtml(__('Weight')) ?></th>
+                    <th scope="col" class="col summary"><?= $block->escapeHtml(__('Height')) ?></th>
+                    <th scope="col" class="col body-fat"><?= $block->escapeHtml(__('Body Fat')) ?></th>
+                    <th scope="col" class="col bmi"><?= $block->escapeHtml(__('BMI')) ?></th>
+                    <th scope="col" class="col chest-size"><?= $block->escapeHtml(__('Chest Size')) ?></th>
+                    <th scope="col" class="col waist-size"><?= $block->escapeHtml(__('Waist Size')) ?></th>
+                    <th scope="col" class="col hip-size"><?= $block->escapeHtml(__('Hip Size')) ?></th>
+                    <th scope="col" class="col actions">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($logs->getItems() as $log) : ?>
+                <tr>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Logged At')) ?>" class="col date"><?= $block->escapeHtml($block->dateFormat($log->getCreatedAt())) ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Weight')) ?>" class="col weight"><?= $log->getWeight() ?> <?= $block->getWeightUnit() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Height')) ?>" class="col height"><?= $log->getHeight() ?> <?= $block->getDistanceUnit() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Body Fat')) ?>" class="col body-fat"><?= $log->getBodyFat() ?> <?= __('%') ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('BMI')) ?>" class="col bmi"><?= $log->getBMI() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Chest Size')) ?>" class="col bmi"><?= $log->getChestSize() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Waist Size')) ?>" class="col bmi"><?= $log->getWaistSize() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Hip Size')) ?>" class="col bmi"><?= $log->getHipSize() ?></td>
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Actions')) ?>" class="col actions">
+                        <a href="<?= $block->escapeUrl($block->getLogLink($log)) ?>" class="action more">
+                            <span><?= $block->escapeHtml(__('Edit')) ?></span>
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getToolbarHtml()) : ?>
+        <div class="toolbar products-reviews-toolbar bottom">
+            <?= $block->getToolbarHtml() ?>
+        </div>
+    <?php endif; ?>
+<?php else : ?>
+    <div class="message info empty"><span><?= $block->escapeHtml(__('You have no fitness log.')) ?></span></div>
+<?php endif; ?>
+<div class="actions-toolbar">
+    <div class="secondary">
+        <a class="action back" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
+            <span><?= $block->escapeHtml(__('Back')) ?></span>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "name": "MageBootcamp/CustomerFitness",
+  "description": "A Magento 2 modules that add a customer fitness log to your store",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Daniel Donselaar",
+      "email": "daniel@magebootcamp.com"
+    }
+  ],
+  "require": {
+      "MageBootcamp/SizeChart": "1.0.0"
+  }
+}

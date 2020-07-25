@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright (c) MageBootcamp 2020.
+ *
+ * Created by MageBootcamp: The Ultimate Online Magento Course.
+ * We are here to help you become a Magento PRO.
+ * Watch and learn at https://magebootcamp.com.
+ *
+ * @author Daniel Donselaar
+ */
+
+/** @var \MageBootcamp\CustomerFitness\Block\Customer\FitnessLogChart $block */
+?>
+<!-- The chart in my account page -->
+<canvas id="myFitnessLog" width="400" height="200"></canvas>
+
+<script>
+    requirejs(['chartjs'], function (ChartJs) {
+        var randomScalingFactor = function () {
+            return Math.round(Math.floor((Math.random() * 100) + 1));
+        };
+
+        var ctx = document.getElementById('myFitnessLog').getContext('2d');
+        var myFitnessLog = new ChartJs(ctx, {
+            type: 'bar',
+            data:
+                <?= $block->getChartData() ?>,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    });
+
+</script>

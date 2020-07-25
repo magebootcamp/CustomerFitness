@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) MageBootcamp 2020.
+  ~
+  ~ Created by MageBootcamp: The Ultimate Online Magento Course.
+  ~ We are here to help you become a Magento PRO.
+  ~ Watch and learn at https://magebootcamp.com.
+  ~
+  ~ @author Daniel Donselaar
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MageBootcamp\CustomerFitness\Api\Data\LogInterface"
+                type="MageBootcamp\CustomerFitness\Model\Data\Log"/>
+    <preference for="MageBootcamp\CustomerFitness\Api\LogRepositoryInterface"
+                type="MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository"/>
+    <preference for="MageBootcamp\CustomerFitness\Api\Data\LogSearchResultsInterface"
+                type="MageBootcamp\CustomerFitness\Model\LogSearchResults"/>
+    <preference for="MageBootcamp\CustomerFitness\Api\BMICalculatorInterface"
+                type="MageBootcamp\CustomerFitness\Model\BMICalculator"/>
+</config>
