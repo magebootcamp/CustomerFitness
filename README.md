@@ -51,7 +51,7 @@ The BMI is automatically calculated based on their length and weight. The module
 
 > Fitness Progress Chart
 
-### 4. [optionally] Sizes can be used to filter a size chart
+### 3. [optionally] Sizes can be used to filter a size chart
 
 `magebootcamp/sizechart is a composer dependency.`
 
