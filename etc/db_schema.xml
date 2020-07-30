@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) MageBootcamp 2020.
+  ~
+  ~ Created by MageBootcamp: The Ultimate Online Magento Course.
+  ~ We are here to help you become a Magento PRO.
+  ~ Watch and learn at https://magebootcamp.com.
+  ~
+  ~ @author Daniel Donselaar
+  -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_fitness_log" resource="default" engine="innodb" comment="Customer Fitness Log">
+        <!--    Primary key    -->
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+
+        <!--    Relations fields   -->
+        <column xsi:type="int" name="customer_id" padding="10" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Customer ID"/>
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Store ID"/>
+
+        <!--    Data fields    -->
+        <column xsi:type="decimal" name="weight" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Weight"/>
+        <column xsi:type="decimal" name="height" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Height"/>
+        <column xsi:type="decimal" name="body_fat" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Body Fat"/>
+        <column xsi:type="decimal" name="BMI" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Body Mass Index"/>
+        <column xsi:type="decimal" name="chest_size" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Chest Size"/>
+        <column xsi:type="decimal" name="Waist Size" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Waist Size"/>
+        <column xsi:type="decimal" name="hip_size" scale="4" precision="12" unsigned="false" nullable="false"
+                default="0" comment="Hip Size"/>
+        <column xsi:type="timestamp" name="created_at" comment="Created At" default="CURRENT_TIMESTAMP"/>
+        <column xsi:type="timestamp" name="updated_at" comment="Updated At" on_update="true"/>
+
+        <!--    Constraints    -->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="CUSTOMER_FITNESS_LOG_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID"
+                    table="customer_fitness_log" column="customer_id" referenceTable="customer_entity" referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="CUSTOMER_FITNESS_LOG_STORE_ID_STORE_STORE_ID"
+                    table="customer_fitness_log" column="store_id" referenceTable="store" referenceColumn="store_id"
+                    onDelete="CASCADE"/>
+    </table>
+</schema>
