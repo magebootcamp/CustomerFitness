@@ -32,12 +32,12 @@
                 default="0" comment="Body Mass Index"/>
         <column xsi:type="decimal" name="chest_size" scale="4" precision="12" unsigned="false" nullable="false"
                 default="0" comment="Chest Size"/>
-        <column xsi:type="decimal" name="Waist Size" scale="4" precision="12" unsigned="false" nullable="false"
+        <column xsi:type="decimal" name="waist_size" scale="4" precision="12" unsigned="false" nullable="false"
                 default="0" comment="Waist Size"/>
         <column xsi:type="decimal" name="hip_size" scale="4" precision="12" unsigned="false" nullable="false"
                 default="0" comment="Hip Size"/>
         <column xsi:type="timestamp" name="created_at" comment="Created At" default="CURRENT_TIMESTAMP"/>
-        <column xsi:type="timestamp" name="updated_at" comment="Updated At" on_update="true"/>
+        <column xsi:type="timestamp" name="updated_at" comment="Updated At" on_update="true" default="CURRENT_TIMESTAMP"/>
 
         <!--    Constraints    -->
         <constraint xsi:type="primary" referenceId="PRIMARY">
