@@ -14,8 +14,8 @@ use Exception;
 use InvalidArgumentException;
 use MageBootcamp\CustomerFitness\Api\Data\LogInterface;
 use MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory;
+use MageBootcamp\CustomerFitness\Api\LogRepositoryInterface;
 use MageBootcamp\CustomerFitness\Controller\Customer;
-use MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository;
 use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Data\Form\FormKey\Validator as FormKeyValidator;
@@ -26,14 +26,13 @@ use Magento\Framework\UrlInterface;
  */
 class FormPost extends Customer
 {
-
     /**
      * @var \Magento\Framework\Data\Form\FormKey\Validator
      */
     protected $formKeyValidator;
 
     /**
-     * @var \MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository
+     * @var \MageBootcamp\CustomerFitness\Api\LogRepositoryInterface
      */
     protected $logRepository;
 
@@ -48,17 +47,17 @@ class FormPost extends Customer
     protected $url;
 
     /**
-     * @param \Magento\Framework\UrlInterface                                 $url
-     * @param \MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory      $logFactory
-     * @param \MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository $logRepository
-     * @param \Magento\Framework\Data\Form\FormKey\Validator                  $formKeyValidator
-     * @param \Magento\Framework\App\Action\Context                           $context
-     * @param \Magento\Customer\Model\Session                                 $customerSession
+     * @param \Magento\Framework\UrlInterface                            $url
+     * @param \MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory $logFactory
+     * @param \MageBootcamp\CustomerFitness\Api\LogRepositoryInterface   $logRepository
+     * @param \Magento\Framework\Data\Form\FormKey\Validator             $formKeyValidator
+     * @param \Magento\Framework\App\Action\Context                      $context
+     * @param \Magento\Customer\Model\Session                            $customerSession
      */
     public function __construct(
         UrlInterface $url,
         LogInterfaceFactory $logFactory,
-        LogRepository $logRepository,
+        LogRepositoryInterface $logRepository,
         FormKeyValidator $formKeyValidator,
         Context $context,
         Session $customerSession

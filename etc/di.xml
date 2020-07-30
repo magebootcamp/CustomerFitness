@@ -13,7 +13,7 @@
     <preference for="MageBootcamp\CustomerFitness\Api\Data\LogInterface"
                 type="MageBootcamp\CustomerFitness\Model\Data\Log"/>
     <preference for="MageBootcamp\CustomerFitness\Api\LogRepositoryInterface"
-                type="MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository"/>
+                type="MageBootcamp\CustomerFitness\Model\LogRepository"/>
     <preference for="MageBootcamp\CustomerFitness\Api\Data\LogSearchResultsInterface"
                 type="MageBootcamp\CustomerFitness\Model\LogSearchResults"/>
     <preference for="MageBootcamp\CustomerFitness\Api\BMICalculatorInterface"

@@ -13,7 +13,7 @@ namespace MageBootcamp\CustomerFitness\Block\Customer;
 
 use MageBootcamp\CustomerFitness\Api\Data\LogInterface;
 use MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory;
-use MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository;
+use MageBootcamp\CustomerFitness\Api\LogRepositoryInterface;
 use MageBootcamp\SizeChart\Helper\UnitHelper;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\CustomerRepositoryInterface;
@@ -27,7 +27,7 @@ use Magento\Newsletter\Model\SubscriberFactory;
 class EditFitnessLog extends Dashboard
 {
     /**
-     * @var \MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository
+     * @var \MageBootcamp\CustomerFitness\Api\LogRepositoryInterface
      */
     protected $logRepository;
 
@@ -52,21 +52,21 @@ class EditFitnessLog extends Dashboard
     protected $logInterfaceFactory;
 
     /**
-     * @param \MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory      $logInterfaceFactory
-     * @param \MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository $logRepository
-     * @param \Magento\Framework\View\Element\Template\Context                $context
-     * @param \Magento\Customer\Model\Session                                 $customerSession
-     * @param \Magento\Newsletter\Model\SubscriberFactory                     $subscriberFactory
-     * @param \Magento\Customer\Api\CustomerRepositoryInterface               $customerRepository
-     * @param \Magento\Customer\Api\AccountManagementInterface                $customerAccountManagement
-     * @param \Magento\Framework\Api\SearchCriteriaBuilder                    $searchCriteriaBuilder
-     * @param \Magento\Framework\Api\FilterBuilder                            $filterBuilder
-     * @param \MageBootcamp\SizeChart\Helper\UnitHelper                       $displayHelper
-     * @param array                                                           $data
+     * @param \MageBootcamp\CustomerFitness\Api\Data\LogInterfaceFactory $logInterfaceFactory
+     * @param \MageBootcamp\CustomerFitness\Api\LogRepositoryInterface   $logRepository
+     * @param \Magento\Framework\View\Element\Template\Context           $context
+     * @param \Magento\Customer\Model\Session                            $customerSession
+     * @param \Magento\Newsletter\Model\SubscriberFactory                $subscriberFactory
+     * @param \Magento\Customer\Api\CustomerRepositoryInterface          $customerRepository
+     * @param \Magento\Customer\Api\AccountManagementInterface           $customerAccountManagement
+     * @param \Magento\Framework\Api\SearchCriteriaBuilder               $searchCriteriaBuilder
+     * @param \Magento\Framework\Api\FilterBuilder                       $filterBuilder
+     * @param \MageBootcamp\SizeChart\Helper\UnitHelper                  $displayHelper
+     * @param array                                                      $data
      */
     public function __construct(
         LogInterfaceFactory $logInterfaceFactory,
-        LogRepository $logRepository,
+        LogRepositoryInterface $logRepository,
         Context $context,
         Session $customerSession,
         SubscriberFactory $subscriberFactory,

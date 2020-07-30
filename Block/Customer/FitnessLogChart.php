@@ -11,6 +11,7 @@
 namespace MageBootcamp\CustomerFitness\Block\Customer;
 
 use MageBootcamp\CustomerFitness\Api\Data\LogInterface;
+use MageBootcamp\CustomerFitness\Api\LogRepositoryInterface;
 use MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository;
 use MageBootcamp\SizeChart\Helper\UnitHelper;
 use Magento\Customer\Api\AccountManagementInterface;
@@ -41,23 +42,23 @@ class FitnessLogChart extends ListFitnessLog
     protected $json;
 
     /**
-     * @param \Magento\Framework\Serialize\Serializer\Json                    $json
-     * @param \MageBootcamp\SizeChart\Helper\UnitHelper                       $unitHelper
-     * @param \MageBootcamp\CustomerFitness\Model\ResourceModel\LogRepository $logRepository
-     * @param \Magento\Framework\View\Element\Template\Context                $context
-     * @param \Magento\Customer\Model\Session                                 $customerSession
-     * @param \Magento\Newsletter\Model\SubscriberFactory                     $subscriberFactory
-     * @param \Magento\Customer\Api\CustomerRepositoryInterface               $customerRepository
-     * @param \Magento\Customer\Api\AccountManagementInterface                $customerAccountManagement
-     * @param \Magento\Framework\Api\SortOrderBuilder                         $sortOrderBuilder
-     * @param \Magento\Framework\Api\SearchCriteriaBuilder                    $searchCriteriaBuilder
-     * @param \Magento\Framework\Api\FilterBuilder                            $filterBuilder
-     * @param array                                                           $data
+     * @param \Magento\Framework\Serialize\Serializer\Json             $json
+     * @param \MageBootcamp\SizeChart\Helper\UnitHelper                $unitHelper
+     * @param \MageBootcamp\CustomerFitness\Api\LogRepositoryInterface $logRepository
+     * @param \Magento\Framework\View\Element\Template\Context         $context
+     * @param \Magento\Customer\Model\Session                          $customerSession
+     * @param \Magento\Newsletter\Model\SubscriberFactory              $subscriberFactory
+     * @param \Magento\Customer\Api\CustomerRepositoryInterface        $customerRepository
+     * @param \Magento\Customer\Api\AccountManagementInterface         $customerAccountManagement
+     * @param \Magento\Framework\Api\SortOrderBuilder                  $sortOrderBuilder
+     * @param \Magento\Framework\Api\SearchCriteriaBuilder             $searchCriteriaBuilder
+     * @param \Magento\Framework\Api\FilterBuilder                     $filterBuilder
+     * @param array                                                    $data
      */
     public function __construct(
         Json $json,
         UnitHelper $unitHelper,
-        LogRepository $logRepository,
+        LogRepositoryInterface $logRepository,
         Context $context,
         Session $customerSession,
         SubscriberFactory $subscriberFactory,
