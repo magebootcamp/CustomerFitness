@@ -4,10 +4,10 @@
 MageBootcamp Customer Fitness is a simple module that allows your customer to 
 add fitness progress to their customer account. Based on their progress we can calculate the BMI and show the results in a chart.
 
-This module is free to use and is part of the MageBootcamp course. I've added extra comments in the module to
+This module is free to use and is part of the MageBootcamp course. We have added extra comments in the module to
 help you out learning Magento but also to use this module as reference.
 
-If you need any help with this module, please let me know.
+If you need any help with this module, please let us know.
 
 Kind regards,
 
